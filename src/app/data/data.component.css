@@ -1,0 +1,41 @@
+body {
+    background-color: #b35151; /* Light gray background color */
+    background-image: url('https://www.shutterstock.com/shutterstock/photos/2137183401/display_1500/stock-vector--d-gray-background-product-display-podium-with-shadow-platform-grey-background-vector-d-render-2137183401.jpg\image_for_form.jpg'); /* Path to your form-like picture */
+    background-size: cover; /* Cover the entire page */
+    background-position: center;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center vertically */
+    background-color: #4c7e92;
+}
+
+.centered-form {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(177, 107, 107, 0.1);
+    max-width: 800px; /* Adjust width as needed */
+    width: 100%;
+}
+
+.centered-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    width: 100%;
+}
+
+.centered-button {
+    text-align: center;
+    margin-top: 20px;
+}

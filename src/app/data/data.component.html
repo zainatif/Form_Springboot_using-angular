@@ -1,0 +1,79 @@
+<div class="container mt-4 centered-form" >
+ 
+    <div class="form-group">
+            <h1>Data Entry</h1>
+     
+    <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"  class="form-control" id="name" placeholder="Please enter name">
+     
+        </div>
+     
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" [(ngModel)]="city" [ngModelOptions]="{standalone: true}"  class="form-control" id="city" placeholder="Enter the city">
+      
+          </div>
+     
+          <div class="form-group">
+            <label>Phone_No</label>
+            <input type="text" [(ngModel)]="mobile" [ngModelOptions]="{standalone: true}" class="form-control" id="mobile" placeholder="Enter Phone_no">
+      
+          </div>
+
+          <div class="form-group">
+            <label>Email_id</label>
+            <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email" placeholder="Enter email address">
+      
+          </div>
+        
+        <button type="submit" class="btn btn-primary mt-4" (click)="register()" >Submit</button>
+        <button type="submit" class="btn btn-primary mt-4" (click)="save()" >Update</button>
+      </form>
+    </div>
+    <div>
+     
+    <div class="centered-button">
+        <button type="button" class="btn btn-primary mt-4" (click)="toggleTable()">View Data</button>
+    </div>
+     
+        <div *ngIf="showTable" class="container mt-4" >
+     
+            <h1>Available Data</h1>
+     
+        <table class="table">
+            <thead>
+             <h1 *ngIf="!isResultLoaded">Loading data..</h1>
+            
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">city</th>
+                <th scope="col">Phone_no</th>
+                <th scope="col">Email</th>
+                <th scope="col">Option</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let DataItem of DataArray">
+     
+                <th scope="row">{{DataItem.dataid  }}</th>
+                <td>{{DataItem.dataname  | uppercase}}</td>
+                <td>{{DataItem.datacity }}</td>
+                <td>{{DataItem.mobile }}</td>
+                <td>{{DataItem.email}}</td>
+     
+                <td>
+                  <button type="button" class="btn btn-primary mt-4" (click)="setUpdate(DataItem)">Edit</button>
+                  
+                  <button type="button" class="btn btn-delete" (click)="setDelete(DataItem)">Delete</button>
+                
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+     
+     
+        </div>
